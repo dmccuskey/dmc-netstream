@@ -4,9 +4,8 @@
 
 Here are the steps:
 
-
-# Run data server
-# Run Corona project
+1. Run data server
+1. Run Corona project
 
 
 **Run server on your computer**
