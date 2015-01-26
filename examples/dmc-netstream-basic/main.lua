@@ -45,7 +45,7 @@ headers['Cache-Control'] = 'no-cache'
 local event_handler = function( event )
 	local stream, etype = event.target, event.type
 	local data, emsg = event.data, event.emsg
-	print("\n\nIn netstream handler", etype, data, emsg )
+	-- print("\n\nIn netstream handler", etype, data, emsg )
 
 	if etype == stream.CONNECTING then
 		print( "NetStream: CONNECTING" )
@@ -55,6 +55,7 @@ local event_handler = function( event )
 
 	elseif etype == stream.DATA then
 		-- print( "NetStream: DATA", data )
+		-- we're handling this in another function below
 
 	elseif etype == stream.DISCONNECTED then
 		print( "NetStream: DISCONNECTED" )
@@ -68,7 +69,12 @@ end
 
 local data_func = function( event )
 	local data, emsg = event.data, event.emsg
-	print("\n\nIn data callback", data, emsg )
+	if data then
+		local msg = string.format( ">> In data callback: received '%s'", data )
+		print( msg )
+	elseif emsg then
+		print( emsg )
+	end
 end
 
 local netstream = NetStream.newStream{
