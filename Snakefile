@@ -14,6 +14,7 @@ module_config = {
 			"dmc_netstream.lua"
 		],
 		"requires": [
+			"dmc-corona-boot",
 			"DMC-Lua-Library",
 			"dmc-objects",
 			"dmc-sockets"
@@ -29,10 +30,8 @@ module_config = {
 		]
 	},
 	"tests": {
-		"files": [
-		],
-		"requires": [
-		]
+		"files": [],
+		"requires": []
 	}
 }
 
