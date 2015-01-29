@@ -21,10 +21,10 @@ module_config = {
 		]
 	},
 	"examples": {
-		"dir": "examples",
+		"base_dir": "examples",
 		"apps": [
 			{
-				"dir": "dmc-netstream-basic",
+				"exp_dir": "dmc-netstream-basic",
 				"requires": []
 			}
 		]
