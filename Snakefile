@@ -17,7 +17,9 @@ module_config = {
 			"dmc-corona-boot",
 			"DMC-Lua-Library",
 			"dmc-objects",
-			"dmc-sockets"
+			"dmc-patch",
+			"dmc-sockets",
+			"dmc-states-mixin"
 		]
 	},
 	"examples": {
