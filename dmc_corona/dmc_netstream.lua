@@ -252,8 +252,8 @@ NetStream.ERROR = 'netstream_error_event'
 function NetStream:__init__( params )
 	-- print( "NetStream:__init__", params )
 	params = params or {}
-	self:superCall( ObjectBase, '__init__', params )
 	self:superCall( StatesMix, '__init__', params )
+	self:superCall( ObjectBase, '__init__', params )
 	--==--
 
 	-- Utils.print( params )
