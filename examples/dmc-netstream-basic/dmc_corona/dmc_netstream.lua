@@ -1,7 +1,7 @@
 --====================================================================--
 -- dmc_corona/dmc_netstream.lua
 --
--- Documentation: http://docs.davidmccuskey.com/
+-- Documentation: https://github.com/dmccuskey/dmc-netstream
 --====================================================================--
 
 --[[
