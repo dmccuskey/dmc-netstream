@@ -27,8 +27,10 @@ local NetStream = require 'dmc_corona.dmc_netstream'
 
 
 -- Fill in information for the HTTP Server
+-- (the one in server/, on this computer; on a device, use the computer's
+-- address on the local network)
 --
-local HOST, PORT = 'http://192.168.3.82', 4411
+local HOST, PORT = 'http://127.0.0.1', 4411
 
 
 
