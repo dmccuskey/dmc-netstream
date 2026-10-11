@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.1 (2026-10-11)
+
+### Fixed
+
+- A refused connection (nothing listening on the port), or a host that isn't found, is reported right away with its own message, `connection refused`; before, the stream waited the whole connect timeout and reported `timeout`. The fix is in dmc-sockets, bundled here. ([#1](https://github.com/dmccuskey/dmc-netstream/issues/1))
+
 ## 0.5.0 (unreleased)
 
 ### Fixed

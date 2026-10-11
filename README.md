@@ -114,7 +114,7 @@ Creates a stream and returns it. The stream connects by itself right after the c
 | `params` | `{}` | `headers`, a table of request headers, and `body`, a string sent after the headers |
 | `auto_connect` | `true` | `false` to wait for `stream:connect()` |
 
-The request is HTTP/1.1 with a `Host` header (with the port when it isn't the default), your headers (their names lower-cased), `user-agent: dmc-netstream 0.5.0` unless you set one, and `content-length` when there's a `body`, unless you set one.
+The request is HTTP/1.1 with a `Host` header (with the port when it isn't the default), your headers (their names lower-cased), `user-agent: dmc-netstream 0.5.1` unless you set one, and `content-length` when there's a `body`, unless you set one.
 
 The status code isn't checked: a `404` error page is streamed like any other body, so check `event.status` in the `CONNECTED` event. After the headers, every piece of data that arrives is passed on, as it comes, not split into lines or messages. A chunked response (`Transfer-Encoding: chunked`) is decoded: the listener gets the data without the chunk sizes.
 
@@ -133,7 +133,7 @@ The response's status code (a number, e.g. `200`) and headers (a table, names lo
 `listener( event )` gets:
 
 - `event.data`: the next piece of the response body, a string of any length
-- when the stream ends: `event.data` is `nil` and `event.emsg` says why (`nil` when the body is complete or the server closed the connection, `'timeout'` when the connection failed, `'bad response'` when the response isn't HTTP)
+- when the stream ends: `event.data` is `nil` and `event.emsg` says why (`nil` when the body is complete or the server closed the connection, `'connection refused'` or `'timeout'` when the connection failed, `'bad response'` when the response isn't HTTP)
 
 ### Events
 
@@ -167,7 +167,6 @@ dmc-netstream has no settings: the `dmc_corona.cfg` in this repository has only 
 
 ## Known Issues
 
-- A failed connection reports `timeout`, after dmc-sockets' timeout, not `connection refused`. [#1](https://github.com/dmccuskey/dmc-netstream/issues/1)
 - A redirect (`301`, `302`) isn't followed: its body is streamed like any other. [#2](https://github.com/dmccuskey/dmc-netstream/issues/2)
 
 ## Development
