@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.2 (2026-11-24)
+
+### Fixed
+
+- Removing a stream (`removeSelf()`) while it was still connecting stopped the app on a later frame with `attempt to index field '_socket' (a nil value)`. Built with dmc-sockets 0.4.0, which drops a pending connect when its socket is closed or removed (from Christian Kündig's fix, [dmc-websockets #23](https://github.com/dmccuskey/dmc-websockets/pull/23)).
+
 ## 0.5.1 (2026-10-11)
 
 ### Fixed
